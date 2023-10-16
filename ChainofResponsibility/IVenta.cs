@@ -2,6 +2,6 @@
 {
     internal interface IVenta
     {
-        double CalculaPrecioFinal(int pCantidad, double pPrecio);
+        double CalcularPrecioFinal(int _Cantidad, double _Precio);
     }
 }

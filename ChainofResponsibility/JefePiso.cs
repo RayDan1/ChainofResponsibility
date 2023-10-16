@@ -1,23 +1,20 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace ChainofResponsibility
+﻿namespace ChainofResponsibility
 {
-    internal class Vendedor : IVenta
+    internal class JefePiso : IVenta
     {
         private IVenta _Siguiente;
-        public Vendedor(IVenta siguiente)
+        public JefePiso(IVenta siguiente)
         {
               _Siguiente = siguiente;
         }
         public double CalcularPrecioFinal( int _Cantidad, double _Precio)
         {
-            Console.WriteLine( "El Vendedor" );
+            Console.WriteLine( "El Jefe de Piso" );
 
             double total = _Cantidad * _Precio;
-            if ( _Cantidad > 10 || total > 1000)
+            if ( _Cantidad > 100 || total > 10000)
                 total = _Siguiente.CalcularPrecioFinal( _Cantidad, _Precio );
             return total;
-        }   
-        
+        }
     }
 }
